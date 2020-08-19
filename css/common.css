@@ -299,6 +299,7 @@ footer {
 
 .appeal-text {
     display: block;
+    font-weight: bold;
     font-size: 14px;
     line-height: 1.14;
     text-transform: uppercase;
@@ -356,16 +357,28 @@ footer {
 }
 
 .appeal.sign {
-    display: block;
+    display: flex;
+    align-items: flex-end;
     width: calc(50%-15px);
 }
 
 .e-mail {
-    display: inline-block;
-    width: 350px;
-    height: 50px;
+    padding: 0;
+    padding-left: 16px;
     margin-right: 12px;
-    border: solid 2px rgb(13, 80, 80);
+    width: 358px;
+    height: 50px;
+    font-size: 16px;
+    line-height: 1.25;
+    background-color: #2F303A;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-sizing: border-box;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+    border-radius: 4px;
+}
+
+.email-form input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
 }
 
 .appeal .button {
