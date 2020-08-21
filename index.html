@@ -14,7 +14,7 @@
       <div class="container header">
         <nav class="navigation">
           <a 
-            class="logo" href="/">
+            class="logo link" href="/">
             <span>Web</span> Studio
           </a>
   
@@ -70,22 +70,56 @@
 
     <div class="backdrop is-hidden" data-modal>
       <div class="modal">
-        <h2 class="modal-title">Оставьте свои данные, мы вам перезвоним</h2>
-        <button data-modal-close type="button" class="button-close"></button>
-        <form class="js-speaker-form">
-          <label for="user-name">Имя</label>
-          <input type="text" name="user-data" id="user-name" />
+        <button data-modal-close class="button-close" type="button"></button>
+        <form class="form">
+          <h2 class="modal-title">Оставьте свои данные, мы вам перезвоним</h2>
 
-          <label for="user-tel">Телефон</label>
-          <input type="tel" name="user-data" id="user-tel">
+          <div class="form-field">
+            <label class="form-label" for="user-name">Имя</label>
+            <div class="form-wrap">
+              <input class="form-input" type="text" name="user-data" required
+              id="user-name" placeholder="Иван Петрович"/>
+              <svg class="icon-form" width="12" height="12">
+                <use href="./img/icon/sprite.svg#name"></use>
+              </svg>
+            </div>
+          </div>
 
-          <label for="user-email">Почта</label>
-          <input type="email" name="user-data" id="user-email">
+          <div class="form-field">
+            <label class="form-label" for="user-tel">Телефон</label>
+            <div class="form-wrap">
+              <input class="form-input" type="tel" 
+              name="user-data" value="+380" pattern="[0-9]{10}" required
+              id="user-tel" placeholder="+38067-xxx-xx-xx"/>
+              <svg class="icon-form" width="13" height="13">
+                <use href="./img/icon/sprite.svg#phone"></use>
+              </svg>
+            </div>
+          </div>
 
-          <label for="comment">Комментарий</label>
-          <textarea name="comment" id="comment" rows="10" placeholder="Введите текст"></textarea>
+          <div class="form-field">
+            <label class="form-label" for="user-email">Почта</label>
+            <div class="form-wrap">
+              <input class="form-input" type="email" name="user-data"
+              pattern="" required
+              id="user-email" placeholder="user-name@gmail.com"/>
+              <svg class="icon-form" width="15" height="12">
+                <use href="./img/icon/sprite.svg#email"></use>
+              </svg>
+            </div>
+          </div>
 
-          <button class="button" type="submit">Отправить</button>
+          <div class="form-field">
+            <label class="form-label" for="comment">Комментарий</label>
+            <textarea name="comment" id="comment" rows="5" placeholder="Введите текст"></textarea>
+          </div>
+
+          <div class="policy">
+            <input type="checkbox" name="policy" id="policy">
+            <label class="policy" for="policy">Соглашаюсь с рассылкой и принимаю <a class="contract-link" href="#">Условия договора</a></label>
+          </div>
+
+          <button class="button btn-submit" type="submit">Отправить</button>
         </form>
       </div>
     </div>
@@ -427,7 +461,7 @@
       <div class="container footer">
         <address class="address flex">
           <a 
-            href="/" class="logo">
+            href="/" class="logo link">
             <span>Web</span> Studio
           </a>
           <p class="address-street address-item">г. Киев, пр-т Леси Украинки, 26</p>
@@ -490,7 +524,7 @@
     <script>
       (() => {
         document
-          .querySelector('.js-speaker-form')
+          .querySelector('.form')
           .addEventListener('submit', e => {
             e.preventDefault();
 
